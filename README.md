@@ -22,11 +22,35 @@
 | **Cursor** | [Skill](cursor-windows/SKILL.md) | [Skill](cursor-mac/SKILL.md) | [Skill](cursor-linux/SKILL.md) |
 | **VSCode** | [Skill](vscode-windows/SKILL.md) | [Skill](vscode-mac/SKILL.md) | [Skill](vscode-linux/SKILL.md) |
 
-## 使用方法
+## 安装与使用 (Installation & Usage)
 
-1.  找到对应你工具和系统的文件夹。
-2.  在你的 AI 助手配置中加载或参考对应文件夹下的 `SKILL.md` 内容。
-3.  AI 将严格遵循其中的角色指令与开发规范。
+### 1. 克隆仓库
+```bash
+git clone https://github.com/455625072/coding-standard-skill.git
+```
+
+### 2. 安装 Skill
+根据您的工具和环境，选择对应的 Skill 文件夹并安装：
+
+#### A. 直接拷贝 (推荐)
+将目标 Skill 文件夹（例如 `antigravity-windows`）直接拷贝到您 AI 工具的技能目录中。
+- **Antigravity**: `%APPDATA%\.gemini\antigravity\skills\`
+- **Codex**: 查阅对应工具的 `SKILLS_PATH` 环境变量或文档。
+
+#### B. 创建符号链接 (开发者推荐)
+如果您希望保持仓库代码更新，可以使用符号链接：
+- **Windows (PowerShell/Cmd - 需要管理员模式)**:
+  ```powershell
+  # 示例：将本项目中的 skill 链接到 Antigravity 目录
+  mklink /D "%APPDATA%\.gemini\antigravity\skills\my-skill" "D:\path\to\coding-standard-skill\antigravity-windows"
+  ```
+- **macOS/Linux**:
+  ```bash
+  ln -s /path/to/coding-standard-skill/cursor-mac ~/.cursor/skills/my-skill
+  ```
+
+### 3. 加载与验证
+重启您的 AI 助手或执行“刷新技能”指令，AI 将自动加载并严格遵循其中的开发规范。
 
 ---
-*Powered by Anti Gravity*
+[English Version (英文版)](README_EN.md)
